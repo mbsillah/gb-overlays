@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/dbfz-style.css">
+</head>
+
+<body>
+    <div>
+        <img id="p1Board" class="boards" src="dbfz-overlays/player1name.png" />
+        <img id="p2Board" class="boards" src="dbfz-overlays/player2name.png" />
+        <img id="p1ScoreBoard" class="boards" src="dbfz-overlays/player1score.png" />
+        <img id="p2ScoreBoard" class="boards" src="dbfz-overlays/player2score.png" />
+        <img id="roundBoard" class="boards" src="dbfz-overlays/infoHeader.png" />
+    </div>
+
+    <div id="names">
+        <span id="p1Score" class="scores"></span>
+        <span id="p2Score" class="scores"></span>
+        <span id="p1Name" class="names"></span>
+        <span id="p2Name" class="names"></span>
+        <span id="round"></span>
+    </div>
+
+    <div id="logoWrapper">
+        <img class="logo" src="dbfz-overlays/gbOpaque.png"/>
+    </div>
+</body>
+
+
+<script text="text/javascript">
+    
+    function init() {
+        $('#p1Board').transition({ opacity: '1', top: '0px' }, 600);
+        $('#p2Board').transition({ opacity: '1', top: '0px' }, 600);
+        $('#p1ScoreBoard').transition({ opacity: '1', left: '0px' }, 600);
+        $('#p2ScoreBoard').transition({ opacity: '1', left: '0px' }, 600);
+        $('#roundBoard').delay(300).transition({ opacity: '1', top: '0px' }, 600);
+        $('#logoWrapper').delay(300).transition({ opacity: '1' }, 600);
+    }
+
+    init();
+
+    var streamInfo = "sc/streamcontrol.json";
+
+    function getText() {
+
+        $.getJSON(streamInfo, function (data) {
+
+            var p1Name = data.pName1;
+            var p2Name = data.pName2;
+            var p1Score = data.pScore1;
+            var p2Score = data.pScore2;
+            var round = data.round;
+
+            if ($('#p1Name').text() != p1Name) {
+                $('#p1Name').transition({ opacity: '0', left: '0px' }, 600, function () {
+                    $('#p1Name').html(p1Name);
+                    $('#p1Name').delay(300).transition({ opacity: '1', left: '63px' }, 600);
+                });
+            }
+
+            if ($('#p2Name').text() != p2Name) {
+                $('#p2Name').transition({ opacity: '0', right: '0px' }, 600, function () {
+                    $('#p2Name').html(p2Name);
+                    $('#p2Name').delay(300).transition({ opacity: '1', right: '63px' }, 600);
+                });
+            }
+
+            if ($('#p1Score').text() != p1Score) {
+                $('#p1Score').transition({ opacity: '0' }, 600, function () {
+                    $('#p1Score').html(p1Score);
+                    $('#p1Score').delay(600).transition({ opacity: '1' }, 600);
+                });
+            }
+
+            if ($('#p2Score').text() != p2Score) {
+                $('#p2Score').transition({ opacity: '0' }, 600, function () {
+                    $('#p2Score').html(p2Score);
+                    $('#p2Score').delay(600).transition({ opacity: '1' }, 600);
+                });
+            }
+
+            if ($('#round').text() != round) {
+                $('#round').transition({ opacity: '0', top: "-22px" }, 600, function () {
+                    $('#round').html(round);
+                    $('#round').delay(300).transition({ opacity: '1', top: "0px" }, 600);
+                });
+            }
+
+            
+        });
+
+
+    }
+    setInterval(function () { getText();}, 1000);
+
+</script>
+
+</html>

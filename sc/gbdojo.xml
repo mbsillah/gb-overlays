@@ -1,0 +1,30 @@
+<!DOCTYPE StreamControlLayout>
+<layout width="475" height="175" tabbed="1">
+    <toolBar>
+    </toolBar>
+<tab name="Match Info">
+    <label x="10" y="14" width="46" height="13">Player 1</label>
+    <label x="10" y="44" width="46" height="13">Player 2</label>
+    <label x="10" y="74" width="60" height="13">Round</label>
+    <lineEdit id="pName1" x="80" y="10" width="171" height="20" dataSet="players.csv" dataField="1"  />
+    <lineEdit id="pName2" x="80" y="40" width="171" height="20" dataSet="players.csv" dataField="1"  />
+    <lineEdit id="round" x="80" y="70" width="171" height="20" dataSet="game.csv" />
+    <spinBox id="pScore1" x="265" y="10" width="42" height="22" maximum="999" />
+    <spinBox id="pScore2" x="265" y="40" width="42" height="22" maximum="999" />
+
+    <button type="reset" x="260" y="70" width="41" height="23" tooltip="Reset the Scores" id="reset" reset="pName1,pScore1,pName2,pScore2">Reset</button>
+    <button type="swap" x="305" y="70" width="41" height="23" tooltip="Swap the Scores" id="swap1" swapSet1="pName1,pScore1" swapSet2="pName2,pScore2">Swap</button>
+</tab>
+
+<tab name="Commentary">
+    <label x="10" y="14" width="46" height="13">Com1</label>
+    <label x="10" y="44" width="46" height="13">Twitter</label>
+    <lineEdit id="com1" x="50" y="10" width="170" height="20" dataSet="commentary.csv" dataField="1" />
+    <lineEdit id="twit1" x="50" y="40" width="170" height="20" dataSet="commentary.csv" dataField="2" master="com1" />
+
+    <label x="230" y="14" width="46" height="13">Com2</label>
+    <label x="230" y="44" width="46" height="13">Twitter</label>
+    <lineEdit id="com2" x="270" y="10" width="170" height="20" dataSet="commentary.csv" dataField="1" />
+    <lineEdit id="twit2" x="270" y="40" width="170" height="20" dataSet="commentary.csv" dataField="2" master="com2" />
+</tab>
+</layout>

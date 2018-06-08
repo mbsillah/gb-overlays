@@ -1,0 +1,82 @@
+@font-face {
+    src: url("fonts/BebasNeue-Regular.otf");
+    font-family: "Bebas";
+}   
+
+body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background-color: transparent;
+    font-family: "Bebas";
+    color: white;
+    text-transform: uppercase;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 3px gray;
+    margin: 0px;
+    padding: 0px;
+}
+
+#board {
+    position: absolute;
+    left: 0px;
+    display: block;
+    opacity: 0;
+    bottom: -327px;
+}
+
+#names {
+    position: absolute;
+    width: 1485px;
+    height: 113px;
+    top: 832px;
+    left: 218px;
+}
+
+.names {
+    position: absolute;
+    width: 497px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 50px;
+    opacity: 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 3px black;
+}
+
+#com1 {
+    position: absolute;
+    left: -46px;
+}
+
+#com2 {
+    position: absolute;
+    right: -46px;
+}
+
+.twitterHandles {
+    position: absolute;
+    width: 1366px;
+    height: 57px;
+    top: 56px;
+    left: 59px;   
+}
+
+.twitter {
+    width: 394px;
+    height: 57px;
+    text-align: center;
+    line-height: 57px;
+    font-size: 50px;
+    opacity: 0;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 3px black;
+}
+
+#twit1 {
+    position: absolute;
+    left: -46px;
+}
+
+#twit2 {
+    position: absolute;
+    right: -46px;
+}

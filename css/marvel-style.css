@@ -1,0 +1,114 @@
+@font-face {
+    src: url("fonts/BebasNeue-Regular.otf");
+    font-family: "Bebas";
+}
+
+body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background-color: transparent;
+    font-family: "Bebas";
+    color: white;
+    text-transform: uppercase;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 3px gray;
+    margin: 0px;
+    padding: 0px;
+}
+
+.boards {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    display: block;
+}
+
+#p1Board, #p2Board {
+    top: -69px;
+}
+
+#p1ScoreBoard {
+    left: -34px;
+}
+
+#p2ScoreBoard {
+    left: 34px;
+}
+
+#roundBoard {
+    top: -70px;
+}
+
+
+#names {
+    position: absolute;
+    left: 308px;
+    top: 2px;
+    width: 1299px;
+    height: 52px;
+    
+}
+
+.scores {
+    width: 56px;
+    height: 52px;
+    top: 2px;
+    line-height: 52px;
+    position: absolute;
+    
+    text-align: center;
+    font-size: 40px
+}
+
+#p1Score {
+    position: absolute;
+    left: 0px;
+}
+
+#p2Score {
+    position: absolute;
+    right: 0px;
+}
+
+.names {
+    position: absolute;
+    width: 413px;
+    height: 52px;
+    top: 2px;
+    line-height: 52px;
+    font-size: 35px;
+    opacity: 0;
+}
+
+#p1Name {
+    position: absolute;
+    left: 76px;
+    text-align: right;
+}
+
+#p2Name {
+    position: absolute;
+    right: 76px;
+    text-align: left;
+}
+
+
+#round {
+    position: absolute;
+    left: 517px;
+    top: -22px;
+    width: 267px;
+    height: 67px;
+    line-height: 67px;
+    text-align: center;
+    font-size: 35px;
+    opacity: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, 2px 2px 3px black;
+}
+
+#logoWrapper {
+    opacity: 0;
+}
